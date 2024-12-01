@@ -1,0 +1,19 @@
+.formSection{
+    background-color: #5d5de0;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+    min-height: 500px;
+    border-radius: 25px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 15px;
+}
