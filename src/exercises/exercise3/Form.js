@@ -8,26 +8,28 @@ export const Form = ()=>{
     const [data, setData] = useState([]);
     const [succed, setSucced] = useState(null);
 
-
     const handleClick = (e)=>{
         e.preventDefault();
 
         const nameValue = e.target.parentElement.firstElementChild.firstElementChild.value;
-        nameValue.length <= 2 
-            ? setNameError(<p>Formato de nombre incorrecto</p>)
-            : setNameError(null);
+        const isNameValid = nameValue.length > 2;
+        isNameValid
+            ? setNameError(null)
+            : setNameError(<p>Formato de nombre incorrecto</p>);
 
         const emailValue = e.target.previousSibling.previousSibling.firstElementChild.value;
-        /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)
+        const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
+        isEmailValid
             ? setMailError(null)
             : setMailError(<p>Formato de email incorrecto</p>);
 
         const passValue = e.target.previousSibling.firstElementChild.value;
-        passValue.length <= 2 
-            ? setPassError(<p>Formato de nombre incorrecto</p>)
-            : setPassError(null);
+        const isPassValid = passValue.length > 2;
+        isPassValid
+            ? setPassError(null)
+            : setPassError(<p>Formato de nombre incorrecto</p>);
         
-        if(nameError === null && mailError === null && passError === null){
+        if(isNameValid && isEmailValid && isPassValid){
             const finalData = [nameValue, emailValue, passValue]
             setData(finalData);
             setSucced(<h2>INFORMACIÓN ENVIADA CON ÉXITO</h2>)
