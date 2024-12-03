@@ -6,6 +6,7 @@ import { Exercise3 } from './exercises/exercise3';
 import { Exercise4 } from './exercises/exercise4';
 import { Exercise5 } from './exercises/exercise5';
 import { Exercise6 } from './exercises/exercise6';
+import Exercise7 from './exercises/exercise7';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <option value="exercise4">Ejercicio 4</option>
         <option value="exercise5">Ejercicio 5</option>
         <option value="exercise6">Ejercicio 6</option>
+        <option value="exercise7">Ejercicio 7</option>
       </select>
 
       {/* Aquí se pueden renderizar los ejercicios */}
@@ -32,6 +34,7 @@ function App() {
       {currentEx === 'exercise4' && <Exercise4/>}
       {currentEx === 'exercise5' && <Exercise5/>}
       {currentEx === 'exercise6' && <Exercise6/>}
+      {currentEx === 'exercise7' && <Exercise7/>}
     </div>
   );
 }
